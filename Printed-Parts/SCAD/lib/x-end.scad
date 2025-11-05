@@ -38,7 +38,7 @@ module reinforcement_selective_infill()
     rotate([90,0,-50,]) translate ([8.5, 8, 1.4])linear_extrude(height = 0.2) polygon( points=[[0,0],[0,5],[12,0]] ); 
 }
     
- x_end_base();
+//x_end_base();
   
     
 module x_end_holes()
@@ -75,7 +75,7 @@ module x_end_holes()
     translate(v=[0,-17, -1]) cylinder(h = 14.51, r = 6.7, $fn = 60);
     translate(v=[0,-17, -0.1]) cylinder(h = 1, r1 = 7.2,r2 = 6.7, $fn = 60);
 
-// Screw holes for TR nut
+    // Screw holes for TR nut
     translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, -4]) cylinder(h = 19, r = 1.65, $fn=50);
     translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, -4]) cylinder(h = 19, r = 1.65, $fn=50);
 
@@ -83,12 +83,12 @@ module x_end_holes()
     translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,-9.5,-1]) cylinder(h=2, r1=2.2,r2=1.65, $fn=50);
 
 
-// Nut traps for TR nut screws
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, 11]) rotate([0, 0, 0])cylinder(h = 6, r = 3.15, $fn=6);
+    // Nut traps for TR nut screws (square nuts)
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, 15]) cube([5.8,10,10], center = true);
 
-    translate(v=[0,-17, 0]) rotate([0,0,-135]) translate([0,-9.5,10]) rotate([0,0,30])cylinder(h = 3, r = 3.1, $fn=6);
-    translate([-5.5,-17.2,10]) rotate([0,0,30]) cube([5,5,3]);
-    translate([-0,-17.2,10]) rotate([0,0,60]) cube([5,10,3]);
+    translate(v=[0,-17, 0]) rotate([0,0,-135]) translate([0,-9,11.1]) cube([5.8,6.8,2.2], center = true);
+    //translate([-5.5,-17.2,10]) rotate([0,0,30]) cube([5,5,3]);
+    //translate([-0,-17.2,10]) rotate([0,0,60]) cube([5,10,3]);
     
     translate([0,0,6.5])
     difference()
@@ -125,9 +125,6 @@ module x_end_plain()
     
 
 }
-
-
-
 
 module pushfit_rod(diameter,length)
 {
