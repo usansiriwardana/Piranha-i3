@@ -1,12 +1,9 @@
-// PRUSA iteration4
-// lcd supports
+// PIRANHA iteration1
+// LCD cover
 // GNU GPL v3
-// Josef Průša <iam@josefprusa.cz> and contributors
-// http://www.reprap.org/wiki/Prusa_Mendel
-// http://prusamendel.org
-
-
-
+// Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
+// based on Prusa i3 MK3S
+// https://reprap.org/wiki/Prusa_i3_MK3
 
 module body()
 {
@@ -80,7 +77,7 @@ module support()
      
         // version
         translate([-20,2,9.5]) rotate([0,0,0]) linear_extrude(height = 0.6) 
-        { text("R1",font = "helvetica:style=Bold", size=5, center=true); }   
+        { text("R1",font = "helvetica:style=Bold", size=5); }   
     }
 }
 

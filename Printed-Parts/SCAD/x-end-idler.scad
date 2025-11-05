@@ -5,7 +5,7 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
-use <x-end.scad>
+use <lib/x-end.scad>
 
 module x_end_idler_holes()
 {
@@ -42,7 +42,7 @@ module waste_pocket()
     translate([-15,-1,6]) rotate([90,0,0]) cylinder( h=5, r=5, $fn=30);     
     translate([-15,-1,51]) rotate([90,0,0]) cylinder( h=5, r=5, $fn=30);    
     translate([-15,-5.9,6]) rotate([90,0,0]) cylinder( h=3, r1=5, r2=4.3, $fn=30);     
-    translate([-15,-5.9,51]) rotate([90,0,0]) cylinder( h=3, r=5, r2=4.3, $fn=30);      
+    translate([-15,-5.9,51]) rotate([90,0,0]) cylinder( h=3, r1=5, r2=4.3, $fn=30);      
 
     // opening window
     translate([-17,-1,51]) rotate([90,0,0]) cube([4,15,4]);
@@ -148,7 +148,7 @@ module x_end_idler()
         translate([-25,7.5,-1]) rotate([0,0,45])  cube([10,10,100]);
 	//version
         translate([-23.7,-25,2]) rotate([90,0,90]) linear_extrude(height = 0.6) 
-        { text("R6",font = "helvetica:style=Bold", size=4, center=true); }   
+        { text("R1",font = "helvetica:style=Bold", size=4); }   
     }
     
     // bearings stop

@@ -1,9 +1,9 @@
-// PRUSA iteration4
-// X end prototype
+// PIRANHA iteration1
+// LCD cover
 // GNU GPL v3
-// Josef Průša <iam@josefprusa.cz> and contributors
-// http://www.reprap.org/wiki/Prusa_Mendel
-// http://prusamendel.org
+// Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
+// based on Prusa i3 MK3S
+// https://reprap.org/wiki/Prusa_i3_MK3
 
 use <bearing.scad>
 use <polyholes.scad>
@@ -80,7 +80,7 @@ module x_end_holes()
     translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, -4]) cylinder(h = 19, r = 1.65, $fn=50);
 
     translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,9.5,-1]) cylinder(h=2, r1=2.2,r2=1.65, $fn=50);
-    translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,-9.5,-1]) cylinder(h=2, r1=2.2,r2=1.65,, $fn=50);
+    translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,-9.5,-1]) cylinder(h=2, r1=2.2,r2=1.65, $fn=50);
 
 
 // Nut traps for TR nut screws

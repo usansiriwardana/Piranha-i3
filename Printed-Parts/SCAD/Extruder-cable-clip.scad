@@ -1,9 +1,9 @@
-// PRUSA iteration4
-// Extruder cable clip
+// PIRANHA iteration1
+// LCD cover
 // GNU GPL v3
-// Josef Průša <iam@josefprusa.cz> and contributors
-// http://www.reprap.org/wiki/Prusa_Mendel
-// http://prusamendel.org
+// Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
+// based on Prusa i3 MK3S
+// https://reprap.org/wiki/Prusa_i3_MK3
 
 module extruder_cable_clip()
 {
@@ -50,9 +50,12 @@ module extruder_cable_clip()
     
     //nylon hole
         
-        translate([-3,28,28]) rotate([35,90,0]) cylinder( h = 24,r = 1.8,$fn=30);}}
-
-
-//translate([0,0,0]) extruder_cable_clip();
+        translate([-3,28,28]) rotate([35,90,0]) cylinder( h = 24,r = 1.8,$fn=30);
+        
+     // version
+        translate([-0.5,24,35.5]) rotate([90,0,90]) linear_extrude(height = 0.6) 
+        { text("R1",font = "helvetica:style=Bold", size=4); }   
+    }
+}
 
 translate([6,-28,-28]) extruder_cable_clip();

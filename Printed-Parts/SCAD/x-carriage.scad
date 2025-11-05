@@ -1,11 +1,11 @@
-// PRUSA iteration4
-// X carriage
+// PIRANHA iteration1
+// LCD cover
 // GNU GPL v3
-// Josef Průša <iam@josefprusa.cz> and contributors
-// http://www.reprap.org/wiki/Prusa_Mendel
-// http://prusamendel.org
+// Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
+// based on Prusa i3 MK3S
+// https://reprap.org/wiki/Prusa_i3_MK3
 
-use <bearing.scad>
+use <lib/bearing.scad>
 
 module belt_cut()
 {
@@ -207,7 +207,7 @@ module final_cutout()
         union() 
         {
         translate([-14.199,9.05,0]) rotate([-5,0,22.5]) cylinder(r=1.62, h=40, $fn=8);    
-        translate([-14.5,9.7,8]) rotate([-5,0,22.5]) cylinder(r=1.62,r2=3, h=8, $fn=8);  
+        translate([-14.5,9.7,8]) rotate([-5,0,22.5]) cylinder(r1=1.62, r2=3, h=8, $fn=8);
         }
     }
     
@@ -392,7 +392,7 @@ module x_carriage()
             
 					 //version
             translate([-12,-2,0.5]) rotate([0,180,0]) linear_extrude(height = 0.6) 
-            { text("R7",font = "helvetica:style=Bold", size=5, center=true); }
+            { text("R1",font = "helvetica:style=Bold", size=5); }
 
 
     }

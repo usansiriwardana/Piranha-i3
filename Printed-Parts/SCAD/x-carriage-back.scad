@@ -1,9 +1,9 @@
-// PRUSA iteration4
-// X carriage back
+// PIRANHA iteration1
+// LCD cover
 // GNU GPL v3
-// Josef Průša <iam@josefprusa.cz> and contributors
-// http://www.reprap.org/wiki/Prusa_Mendel
-// http://prusamendel.org
+// Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
+// based on Prusa i3 MK3S
+// https://reprap.org/wiki/Prusa_i3_MK3
 
  
 module m3head()
@@ -168,7 +168,7 @@ module x_carriage_back()
 
 				// version
         translate([-12,-29,22.6]) rotate([0,0,0]) linear_extrude(height = 0.6) 
-        { text("R7",font = "helvetica:style=Bold", size=4, center=true); }
+        { text("R1",font = "helvetica:style=Bold", size=4); }
         
 
     }

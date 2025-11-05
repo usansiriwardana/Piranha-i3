@@ -1,10 +1,9 @@
-// PRUSA iteration4
-// Heatbed cable clip
+// PIRANHA iteration1
+// LCD cover
 // GNU GPL v3
-// Josef Průša <iam@josefprusa.cz> and contributors
-// http://www.reprap.org/wiki/Prusa_Mendel
-// http://prusamendel.org
-
+// Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
+// based on Prusa i3 MK3S
+// https://reprap.org/wiki/Prusa_i3_MK3
 
  module heatbed_cable_clip()
 {
@@ -43,20 +42,16 @@ difference()
     }}
     
     // cable opening
-    translate([61,102,28]) rotate([35,90,0])
+    translate([61,102,28]) rotate([35,90,0]) difference (){
+        cylinder(h=35,r=4,$fn=30);
     
-    difference (){
-   
-    cylinder(h=35,r=4,$fn=30);
-       
-    
-    translate([0,0,3]) cylinder(h=5,r=4,$fn=30);
-    translate([0,0,12]) cylinder(h=1,r=4,$fn=30); 
-    translate([0,0,16]) cylinder(h=1,r=4,$fn=30); 
-    translate([0,0,20]) cylinder(h=1,r=4,$fn=30);
-   
+        translate([0,0,3]) cylinder(h=5,r=4,$fn=30);
+        translate([0,0,12]) cylinder(h=1,r=4,$fn=30); 
+        translate([0,0,16]) cylinder(h=1,r=4,$fn=30); 
+        translate([0,0,20]) cylinder(h=1,r=4,$fn=30); 
     }
-     translate([61,102,28]) rotate([35,90,0]) cylinder(h=35,r=3.3,$fn=30);
+    
+    translate([61,102,28]) rotate([35,90,0]) cylinder(h=35,r=3.3,$fn=30);
     
   
     
@@ -69,7 +64,9 @@ difference()
             translate([67,88.8,14]) rotate([0,0,0]) cylinder(h=35,r=1.6,$fn=50); 
             translate([83,96,14]) rotate([0,0,0]) cylinder(h=35,r=1.6,$fn=50);
     
-
+    // version
+        translate([74,86,34.5]) rotate([0,0,0]) linear_extrude(height = 0.6) 
+        { text("R1",font = "helvetica:style=Bold", size=4); }
     
     
     
@@ -80,4 +77,4 @@ difference()
 
 } 
 
-translate([-70,-110,0]) heatbed_cable_clip();
+translate([-70, -101, -28]) heatbed_cable_clip();

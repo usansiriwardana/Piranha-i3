@@ -1,11 +1,11 @@
-// PRUSA iteration4
-// Z screw cover
+// PIRANHA iteration1
+// LCD cover
 // GNU GPL v3
-// Josef Průša <iam@josefprusa.cz> and contributors
-// http://www.reprap.org/wiki/Prusa_Mendel
-// http://prusamendel.org
+// Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
+// based on Prusa i3 MK3S
+// https://reprap.org/wiki/Prusa_i3_MK3
 
-
+// partial threads
 translate(v=[-4.2, 0, 4.3]) rotate([0,90,0])  cylinder(r1=0.6, r2=0.4, h = 1, $fn=60);
 translate(v=[4.2, 0, 4.3]) rotate([0,-90,0])  cylinder(r1=0.6, r2=0.4, h = 1, $fn=60);
 translate(v=[0, 4.2, 4.3]) rotate([90,0,0])  cylinder(r1=0.6, r2=0.4, h = 1, $fn=60);

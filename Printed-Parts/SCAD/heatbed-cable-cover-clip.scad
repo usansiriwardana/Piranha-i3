@@ -1,10 +1,9 @@
-// PRUSA iteration4
-// Heatbed cable cover clip MK3S
+// PIRANHA iteration1
+// LCD cover
 // GNU GPL v3
-// Josef Průša <iam@josefprusa.cz> and contributors
-// http://www.reprap.org/wiki/Prusa_Mendel
-// http://prusamendel.org
-
+// Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
+// based on Prusa i3 MK3S
+// https://reprap.org/wiki/Prusa_i3_MK3
 
 module m3_nut()
 {
@@ -65,6 +64,10 @@ module clip()
         // edges  
         translate([-18.0,32,-5]) rotate([0,0,25])  cube([11,11,15]);
         translate([18,32,-5]) rotate([0,0,65])  cube([11,11,15]);
+        
+        // version
+        translate([3,16,-0.5]) rotate([0,0,0]) linear_extrude(height = 0.6) 
+        { text("R1",font = "helvetica:style=Bold", size=4); }
      
     }
     
@@ -85,8 +88,7 @@ module clip()
         translate([-6.96,19.45,1]) rotate([0,0,45])  cube([10,5,6]); 
         translate([-4,20,0]) rotate([0,0,0])  cube([8,11,6]); 
         
-    }
-       
+    }  
 }
 
 
