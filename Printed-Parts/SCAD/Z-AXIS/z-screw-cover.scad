@@ -1,5 +1,5 @@
 // PIRANHA iteration1
-// LCD cover
+// Z screw cover
 // GNU GPL v3
 // Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
 // based on Prusa i3 MK3S

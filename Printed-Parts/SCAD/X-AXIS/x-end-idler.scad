@@ -1,9 +1,9 @@
-// PRUSA iteration4
+// PIRANHA iteration1
 // X end idler
 // GNU GPL v3
-// Josef Průša <iam@josefprusa.cz> and contributors
-// http://www.reprap.org/wiki/Prusa_Mendel
-// http://prusamendel.org
+// Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
+// based on Prusa i3 MK3S
+// http://www.reprap.org/wiki/Prusa_i3_MK3
 
 use <lib/x-end.scad>
 
