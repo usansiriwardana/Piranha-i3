@@ -6,7 +6,6 @@
 // https://reprap.org/wiki/Prusa_i3_MK3
 
 use <bearing.scad>
-use <polyholes.scad>
 rod_distance = 45;
 
 module x_end_base()
@@ -21,13 +20,13 @@ module x_end_base()
     
     //Nut trap
     // Cylinder
-    translate(v=[0,-17,0]) cylinder(h = 13.5, r=12.5, $fn=250);
+    translate(v=[0,-17,0]) cylinder(h = 13.5, r=12.5);
     difference()
     {
-        translate(v=[0,-17,13]) poly_cylinder(h = 3, r=12.5, $fn=25);
+        translate(v=[0,-17,13]) cylinder(h = 3, r=12.5);
         translate(v=[8,-17,12]) rotate([0,0,0]) cube(size = [15,50,10], center = true);
         translate(v=[8,-24,12]) rotate([0,0,0]) cube(size = [50,15,10], center = true);
-        translate(v=[0,-17, -1]) cylinder(h = 20, r = 6.7, $fn = 60);
+        translate(v=[0,-17, -1]) cylinder(h = 20, r = 6.7);
     }
     
     
@@ -71,24 +70,21 @@ module x_end_holes()
 
 // TR Nut trap
    // Hole for the nut
-    //#translate(v=[0,-17, -1]) poly_cylinder(h = 9.01, r = 6.7, $fn = 60);
-    translate(v=[0,-17, -1]) cylinder(h = 14.51, r = 6.7, $fn = 60);
-    translate(v=[0,-17, -0.1]) cylinder(h = 1, r1 = 7.2,r2 = 6.7, $fn = 60);
+    translate(v=[0,-17, -1]) cylinder(h = 14.51, r = 6.7);
+    translate(v=[0,-17, -0.1]) cylinder(h = 1, r1 = 7.2,r2 = 6.7);
 
     // Screw holes for TR nut
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, -4]) cylinder(h = 19, r = 1.65, $fn=50);
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, -4]) cylinder(h = 19, r = 1.65, $fn=50);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, -4]) cylinder(h = 19, r = 1.65);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, -4]) cylinder(h = 19, r = 1.65);
 
-    translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,9.5,-1]) cylinder(h=2, r1=2.2,r2=1.65, $fn=50);
-    translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,-9.5,-1]) cylinder(h=2, r1=2.2,r2=1.65, $fn=50);
+    translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,9.5,-1]) cylinder(h=2, r1=2.2,r2=1.65);
+    translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,-9.5,-1]) cylinder(h=2, r1=2.2,r2=1.65);
 
 
     // Nut traps for TR nut screws (square nuts)
     translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, 15]) cube([5.8,10,10], center = true);
 
     translate(v=[0,-17, 0]) rotate([0,0,-135]) translate([0,-9,11.1]) cube([5.8,6.8,2.2], center = true);
-    //translate([-5.5,-17.2,10]) rotate([0,0,30]) cube([5,5,3]);
-    //translate([-0,-17.2,10]) rotate([0,0,60]) cube([5,10,3]);
     
     translate([0,0,6.5])
     difference()
@@ -128,7 +124,7 @@ module x_end_plain()
 
 module pushfit_rod(diameter,length)
 {
-    poly_cylinder(h = length, r=diameter/2);
+    cylinder(h = length, r=diameter/2);
     difference()
     {
         translate(v=[0,-diameter/2.85,length/2]) rotate([0,0,45]) cube(size = [diameter/2,diameter/2,length], center = true);
