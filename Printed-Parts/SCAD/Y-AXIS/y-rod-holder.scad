@@ -6,6 +6,7 @@
 // https://reprap.org/wiki/Prusa_i3_MK3
 
 // assume 3030 extrusions if not specified
+extrusion_size = 30;
 rail_width = extrusion_size == 20 ? 6 : 8;
 
 difference(){
