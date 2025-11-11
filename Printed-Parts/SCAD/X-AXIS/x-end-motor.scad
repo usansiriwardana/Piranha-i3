@@ -5,7 +5,7 @@
 // based on Prusa i3 MK3S
 // https://reprap.org/wiki/Prusa_i3_MK3
 
-use <lib/x-end.scad>
+use <../lib/x-end.scad>
 
 module x_end_motor_base()
 {
