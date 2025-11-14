@@ -5,8 +5,6 @@
 // based on Prusa i3 MK3S
 // https://reprap.org/wiki/Prusa_i3_MK3
 
-$fn = 128;
-
 difference(){
 	// base
 	union(){
