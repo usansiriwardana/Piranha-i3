@@ -1,11 +1,9 @@
 // PIRANHA iteration1
-// y belt idler
+// y belt holder
 // GNU GPL v3
 // Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
 // based on Prusa i3 MK3S
 // https://reprap.org/wiki/Prusa_i3_MK3
-
-$fn = 128;
 
 difference(){
 	cube([26.5, 21.5, 18]);
