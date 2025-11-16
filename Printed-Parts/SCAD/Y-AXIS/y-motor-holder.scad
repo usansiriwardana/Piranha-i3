@@ -1,5 +1,5 @@
 // PIRANHA iteration1
-// y belt idler
+// y motor holder
 // GNU GPL v3
 // Usan Siriwardana <usiriwar@uwaterloo.ca> and contributors
 // based on Prusa i3 MK3S
@@ -62,5 +62,5 @@ difference(){
 	translate([0, -0.5, 0.5])rotate([0, 90+45, 0])cube([1, 48+1, 1]);
 	
 	// revision number
-	translate([5, 45, 0])rotate([180, 0, 0])text("R1");
+	translate([5, 45, 0.5])rotate([180, 0, 0])linear_extrude(1)text("R1");
 }

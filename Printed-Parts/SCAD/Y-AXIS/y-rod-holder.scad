@@ -60,5 +60,5 @@ difference(){
 	translate([23.75, 11.9, -0.5])cube([10, 10, 11]);
 
 	// revision	
-	translate([0,4,-0.5])rotate([90, 0, -90-30])translate([-4.7, 5, 0])text(text = "R1", halign="center", valign="center", size=4); 
+	translate([0,4,-0.5])rotate([90, 0, -90-30])translate([-4.7, 5, -0.5])linear_extrude(1)text(text = "R1", halign="center", valign="center", size=4); 
 }

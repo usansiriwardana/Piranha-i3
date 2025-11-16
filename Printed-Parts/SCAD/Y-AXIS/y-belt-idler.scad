@@ -39,5 +39,5 @@ difference(){
 		translate([0, 0, 2.2/2 + 10/2 + 3.5])cube([5.8, 5.8, 2.2+10], center=true);
 	}	
 	// revision	
-	translate([23/2,34/2,0])rotate([180, 0, 0])text(text = "R1", halign="center", valign="center", size=8); 
+	translate([23/2,34/2,0.5])rotate([180, 0, 0])linear_extrude(1)text(text = "R1", halign="center", valign="center", size=8); 
 }

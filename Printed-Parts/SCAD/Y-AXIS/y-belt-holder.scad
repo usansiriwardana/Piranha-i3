@@ -35,5 +35,5 @@ difference(){
 	translate([8.8, 8-1, 9])rotate([-90, 90, 0])cylinder(h = 4+1, r = 6.47/2, $fn = 6);
 	
 	// revision
-	translate([0, 20, 5])rotate([90, 0, 180+90])text("R1", size=8);
+	translate([0.5, 20, 5])rotate([90, 0, 180+90])linear_extrude(1)text("R1", size=8);
 }
