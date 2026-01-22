@@ -26,8 +26,7 @@ z-axis: bin/Z-AXIS/z-axis-top.stl bin/Z-AXIS/z-axis-bottom.stl bin/Z-AXIS/z-scre
 
 lcd: bin/LCD/LCD-cover.stl bin/LCD/LCD-knob.stl bin/LCD/lcd-supports.stl
 
-e-axis: bin/E-AXIS/adapter-printer.stl bin/E-AXIS/print-fan-support.stl
-
+e-axis: bin/E-AXIS/adapter-printer.stl bin/E-AXIS/print-fan-support.stl bin/E-AXIS/fs-lever.stl bin/E-AXIS/fs-cover.stl bin/E-AXIS/extruder-idler.stl bin/E-AXIS/adapter-printer.stl
 # generic compile rule
 bin/%.stl: Printed-Parts/SCAD/%.scad
 	openscad -o $@ ${OPENSCAD_ARGS} $<
