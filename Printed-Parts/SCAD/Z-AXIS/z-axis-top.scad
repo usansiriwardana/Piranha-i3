@@ -5,12 +5,15 @@
 // based on Prusa i3 MK3S
 // https://reprap.org/wiki/Prusa_i3_MK3
 
+// assume lead screws don't poke out unless specified
+lead_screw_hole = false;
+
 module z_top_base()
 {
     translate([0,-5,0]) cube([8,45,16]); // plate touching the base
     translate([0,-5,0]) cube([33,3.6,12]); // plate touching the base
     translate([0,-5,0]) cube([38,45,5]); // plate touching the base   
-    translate([25+4.3,3.2,5]) rotate([0,0,0]) cylinder(h = 2.5, r=7, $fn=60);
+    translate([25+4.3,3.2,5]) rotate([0,0,0]) cylinder(h = 2.5, r=7);
 }
 
 module z_top_fancy()
@@ -46,28 +49,32 @@ module z_top_fancy()
 module z_top_holes()
 {
     // Screw holes frame
-    translate([-1,10,10])      rotate([0,90,0]) cylinder(h = 20, r=1.6, $fn=30);
-    translate([-1,10+20,10])   rotate([0,90,0]) cylinder(h = 20, r=1.6, $fn=30);
+    translate([-1,10,10])      rotate([0,90,0]) cylinder(h = 20, r=1.6);
+    translate([-1,10+20,10])   rotate([0,90,0]) cylinder(h = 20, r=1.6);
 
     // Screw heads
-    translate([4,10,10]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
+    translate([4,10,10]) rotate([0,90,0]) cylinder(h = 20, r=3.1);
     translate([4,10-3.1,10]) cube([10,6.2,10]);
-    translate([4,10+20,10])  rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
+    translate([4,10+20,10])  rotate([0,90,0]) cylinder(h = 20, r=3.1);
     translate([4,10+20-3.1,10]) cube([10,6.2,10]);
 
     // Z rod holder
-    translate([25+4.3,3,0.6]) rotate([0,0,0]) cylinder(h = 50, r=4.05, $fn=50);
-    translate([25+4.3,3,3.4]) rotate([0,0,0]) cylinder(h = 4.2, r2=4.3, r1=4.05, $fn=50);
+    translate([25+4.3,3,0.6]) rotate([0,0,0]) cylinder(h = 50, r=4.05);
+    translate([25+4.3,3,3.4]) rotate([0,0,0]) cylinder(h = 4.2, r2=4.3, r1=4.05);
     
     // material saving cut
     translate([16,10,-4]) rotate([0,0,0]) cylinder(h = 50, r=8, $fn=6);  
     translate([16,28,-4]) rotate([0,0,0]) cylinder(h = 50, r=8, $fn=6);  
 
     // z screw hole
-    translate([25+4.3,3+17,3]) rotate([0,0,0]) cylinder(h = 50, r=5.8, $fn=15); // screw hole
-    translate([25+4.3,3+17,0.6]) rotate([0,0,0]) cylinder(h = 50, r=5.8, $fn=15); // screw hole
+    translate([25+4.3,3+17,3]) rotate([0,0,0]) cylinder(h = 50, r=5.8); // screw hole
+    translate([25+4.3,3+17,0.6]) rotate([0,0,0]) cylinder(h = 50, r=5.8); // screw hole
     translate([25+4.3-1,3,0.6]) cube([2,15,8]); // it's bit up because it helps with printing
-    
+
+    if(lead_screw_hole){
+        translate([25+4.3,3+17,-10]) cylinder(h = 50, r=5.8);
+    }
+
     //selective infill
     translate([36.5,1.5,0.5]) cube([0.1,20,3.5]);    
     translate([10,-3,0.5]) cube([22,0.1,3.5]);  

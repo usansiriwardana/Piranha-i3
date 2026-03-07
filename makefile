@@ -4,8 +4,9 @@ EXTRUSION_ARG = -D 'extrusion_size=30'
 # build all files for a Piranha from scratch (3030 extrusions, RAMPS board, MK52 bed, etc.)
 scratch: scaffold x-axis y-axis z-axis lcd e-axis
 
-# build all files for a Piranha using salvaged parts from a Tevo Tarantula (2040 extrusions, MKS GEN L v1.0 board, MK2 bed, etc.)
+# build all files for a Piranha using salvaged parts from a Tevo Tarantula (2040 extrusions, MKS GEN L v1.0 board, MK2 bed, longer lead screws, etc.)
 tarantula: EXTRUSION_ARG= -D 'extrusion_size=20'
+tarantula: LEADSCREW_ARG= -D 'lead_screw_hole=true'
 
 tarantula: scaffold x-axis y-axis z-axis lcd e-axis
 
@@ -35,6 +36,9 @@ bin/%.stl: Printed-Parts/SCAD/%.scad
 # some files require additional arguments (extrusion size, main board type, bed type, etc.)
 bin/Y-AXIS/y-rod-holder.stl: Printed-Parts/SCAD/Y-AXIS/y-rod-holder.scad
 	openscad -o $@ ${OPENSCAD_ARGS} ${EXTRUSION_ARG} $<
+
+bin/Z-AXIS/z-axis-top.stl: Printed-Parts/SCAD/Z-AXIS/z-axis-top.scad
+	openscad -o $@ ${OPENSCAD_ARGS} ${LEADSCREW_ARG} $<
 
 clean:
 	rm -r bin
