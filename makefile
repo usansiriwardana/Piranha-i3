@@ -19,25 +19,25 @@ scaffold:
 	mkdir bin/LCD || true
 	mkdir bin/E-AXIS || true
 
-y-axis: bin/Y-AXIS/y-rod-holder.stl bin/Y-AXIS/y-belt-idler.stl bin/Y-AXIS/y-motor-holder.stl bin/Y-AXIS/y-belt-holder.stl bin/Y-AXIS/y-belt-tensioner.stl
+y-axis: bin/Y-AXIS/y-rod-holder.3mf bin/Y-AXIS/y-belt-idler.3mf bin/Y-AXIS/y-motor-holder.3mf bin/Y-AXIS/y-belt-holder.3mf bin/Y-AXIS/y-belt-tensioner.3mf
 
-x-axis: bin/X-AXIS/x-carriage-back.stl bin/X-AXIS/x-carriage.stl bin/X-AXIS/x-end-idler.stl bin/X-AXIS/x-end-motor.stl
+x-axis: bin/X-AXIS/x-carriage-back.3mf bin/X-AXIS/x-carriage.3mf bin/X-AXIS/x-end-idler.3mf bin/X-AXIS/x-end-motor.3mf
 
-z-axis: bin/Z-AXIS/z-axis-top.stl bin/Z-AXIS/z-axis-bottom.stl bin/Z-AXIS/z-screw-cover.stl
+z-axis: bin/Z-AXIS/z-axis-top.3mf bin/Z-AXIS/z-axis-bottom.3mf bin/Z-AXIS/z-screw-cover.3mf
 
-lcd: bin/LCD/LCD-cover.stl bin/LCD/LCD-knob.stl bin/LCD/lcd-supports.stl
+lcd: bin/LCD/LCD-cover.3mf bin/LCD/LCD-knob.3mf bin/LCD/lcd-supports.3mf
 
-e-axis: bin/E-AXIS/adapter-printer.stl bin/E-AXIS/print-fan-support.stl bin/E-AXIS/fs-lever.stl bin/E-AXIS/fs-cover.stl bin/E-AXIS/extruder-idler.stl bin/E-AXIS/adapter-printer.stl bin/E-AXIS/extruder-cover.stl bin/E-AXIS/extruder-body.stl
+e-axis: bin/E-AXIS/adapter-printer.3mf bin/E-AXIS/print-fan-support.3mf bin/E-AXIS/fs-lever.3mf bin/E-AXIS/fs-cover.3mf bin/E-AXIS/extruder-idler.3mf bin/E-AXIS/adapter-printer.3mf bin/E-AXIS/extruder-cover.3mf bin/E-AXIS/extruder-body.3mf
 
 # generic compile rule
-bin/%.stl: Printed-Parts/SCAD/%.scad
+bin/%.3mf: Printed-Parts/SCAD/%.scad
 	openscad -o $@ ${OPENSCAD_ARGS} $<
 
 # some files require additional arguments (extrusion size, main board type, bed type, etc.)
-bin/Y-AXIS/y-rod-holder.stl: Printed-Parts/SCAD/Y-AXIS/y-rod-holder.scad
+bin/Y-AXIS/y-rod-holder.3mf: Printed-Parts/SCAD/Y-AXIS/y-rod-holder.scad
 	openscad -o $@ ${OPENSCAD_ARGS} ${EXTRUSION_ARG} $<
 
-bin/Z-AXIS/z-axis-top.stl: Printed-Parts/SCAD/Z-AXIS/z-axis-top.scad
+bin/Z-AXIS/z-axis-top.3mf: Printed-Parts/SCAD/Z-AXIS/z-axis-top.scad
 	openscad -o $@ ${OPENSCAD_ARGS} ${LEADSCREW_ARG} $<
 
 clean:
